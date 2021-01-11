@@ -420,5 +420,7 @@ module.exports = {
   getPieceById,
   getQueenAllowedMovement,
   getRookAllowedMovements,
+  letterToNumber,
   movePiece,
+  numberToLetter,
 };
