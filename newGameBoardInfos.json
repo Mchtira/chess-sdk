@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1A",
+    "position": { "x": "1", "y": "A" },
+    "type": "rook"
+  },
+  {
+    "id": "1B",
+    "position": { "x": "1", "y": "B" },
+    "type": "knight"
+  },
+  {
+    "id": "1C",
+    "position": { "x": "1", "y": "C" },
+    "type": "bishop"
+  },
+  {
+    "id": "1D",
+    "position": { "x": "1", "y": "D" },
+    "type": "queen"
+  },
+  {
+    "id": "1E",
+    "position": { "x": "1", "y": "E" },
+    "type": "king"
+  },
+  {
+    "id": "1F",
+    "position": { "x": "1", "y": "F" },
+    "type": "bishop"
+  },
+  {
+    "id": "1G",
+    "position": { "x": "1", "y": "G" },
+    "type": "knight"
+  },
+  {
+    "id": "1H",
+    "position": { "x": "1", "y": "H" },
+    "type": "rook"
+  },
+  {
+    "id": "2H",
+    "position": { "x": "2", "y": "H" },
+    "type": "pawn"
+  },
+  {
+    "id": "2G",
+    "position": { "x": "2", "y": "G" },
+    "type": "pawn"
+  },
+  {
+    "id": "2F",
+    "position": { "x": "2", "y": "F" },
+    "type": "pawn"
+  },
+  {
+    "id": "2E",
+    "position": { "x": "2", "y": "E" },
+    "type": "pawn"
+  },
+  {
+    "id": "2D",
+    "position": { "x": "2", "y": "D" },
+    "type": "pawn"
+  },
+  {
+    "id": "2C",
+    "position": { "x": "2", "y": "C" },
+    "type": "pawn"
+  },
+  {
+    "id": "2B",
+    "position": { "x": "2", "y": "B" },
+    "type": "pawn"
+  },
+  {
+    "id": "2A",
+    "position": { "x": "2", "y": "A" },
+    "type": "pawn"
+  },
+  {
+    "id": "7H",
+    "position": { "x": "7", "y": "H" },
+    "type": "pawn"
+  },
+  {
+    "id": "7G",
+    "position": { "x": "7", "y": "G" },
+    "type": "pawn"
+  },
+  {
+    "id": "7F",
+    "position": { "x": "7", "y": "F" },
+    "type": "pawn"
+  },
+  {
+    "id": "7E",
+    "position": { "x": "7", "y": "E" },
+    "type": "pawn"
+  },
+  {
+    "id": "7D",
+    "position": { "x": "7", "y": "D" },
+    "type": "pawn"
+  },
+  {
+    "id": "7C",
+    "position": { "x": "7", "y": "C" },
+    "type": "pawn"
+  },
+  {
+    "id": "7B",
+    "position": { "x": "7", "y": "B" },
+    "type": "pawn"
+  },
+  {
+    "id": "7A",
+    "position": { "x": "7", "y": "A" },
+    "type": "pawn"
+  },
+  {
+    "id": "8A",
+    "position": { "x": "8", "y": "A" },
+    "type": "rook"
+  },
+  {
+    "id": "8B",
+    "position": { "x": "8", "y": "B" },
+    "type": "knight"
+  },
+  {
+    "id": "8C",
+    "position": { "x": "8", "y": "C" },
+    "type": "bishop"
+  },
+  {
+    "id": "8D",
+    "position": { "x": "8", "y": "D" },
+    "type": "queen"
+  },
+  {
+    "id": "8E",
+    "position": { "x": "8", "y": "E" },
+    "type": "king"
+  },
+  {
+    "id": "8F",
+    "position": { "x": "8", "y": "F" },
+    "type": "bishop"
+  },
+  {
+    "id": "8G",
+    "position": { "x": "8", "y": "G" },
+    "type": "knight"
+  },
+  {
+    "id": "8H",
+    "position": { "x": "8", "y": "H" },
+    "type": "rook"
+  }
+]

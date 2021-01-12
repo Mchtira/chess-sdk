@@ -1,5 +1,6 @@
 const letterToNumber = require('./convertLetterToNumber.json');
 const numberToLetter = require('./convertNumberToLetter.json');
+const newGameBoardInfos = require('./newGameBoardInfos.json');
 
 const isBetween1and8Included = (number) => number <= 8 && number > 0;
 const getPieceById = (arrayOfChessPieces, chessPieceId) => arrayOfChessPieces.find(({ id }) => chessPieceId === id);
@@ -405,6 +406,7 @@ const movePiece = (arrayOfChessPieces, chessPieceId, newPosition) => {
 
       pieceInfo.position.x = newPosition[0];
       pieceInfo.position.y = newPosition[1];
+
       return pieceInfo;
     });
 };
@@ -422,5 +424,6 @@ module.exports = {
   getRookAllowedMovements,
   letterToNumber,
   movePiece,
+  newGameBoardInfos,
   numberToLetter,
 };
