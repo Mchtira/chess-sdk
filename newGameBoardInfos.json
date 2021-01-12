@@ -2,161 +2,193 @@
   {
     "id": "1A",
     "position": { "x": "1", "y": "A" },
-    "type": "rook"
+    "type": "rook",
+    "color": "white"
   },
   {
     "id": "1B",
     "position": { "x": "1", "y": "B" },
-    "type": "knight"
+    "type": "knight",
+    "color": "white"
   },
   {
     "id": "1C",
     "position": { "x": "1", "y": "C" },
-    "type": "bishop"
+    "type": "bishop",
+    "color": "white"
   },
   {
     "id": "1D",
     "position": { "x": "1", "y": "D" },
-    "type": "queen"
+    "type": "queen",
+    "color": "white"
   },
   {
     "id": "1E",
     "position": { "x": "1", "y": "E" },
-    "type": "king"
+    "type": "king",
+    "color": "white"
   },
   {
     "id": "1F",
     "position": { "x": "1", "y": "F" },
-    "type": "bishop"
+    "type": "bishop",
+    "color": "white"
   },
   {
     "id": "1G",
     "position": { "x": "1", "y": "G" },
-    "type": "knight"
+    "type": "knight",
+    "color": "white"
   },
   {
     "id": "1H",
     "position": { "x": "1", "y": "H" },
-    "type": "rook"
+    "type": "rook",
+    "color": "white"
   },
   {
     "id": "2H",
     "position": { "x": "2", "y": "H" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "white"
   },
   {
     "id": "2G",
     "position": { "x": "2", "y": "G" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "white"
   },
   {
     "id": "2F",
     "position": { "x": "2", "y": "F" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "white"
   },
   {
     "id": "2E",
     "position": { "x": "2", "y": "E" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "white"
   },
   {
     "id": "2D",
     "position": { "x": "2", "y": "D" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "white"
   },
   {
     "id": "2C",
     "position": { "x": "2", "y": "C" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "white"
   },
   {
     "id": "2B",
     "position": { "x": "2", "y": "B" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "white"
   },
   {
     "id": "2A",
     "position": { "x": "2", "y": "A" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "white"
   },
   {
     "id": "7H",
     "position": { "x": "7", "y": "H" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "black"
   },
   {
     "id": "7G",
     "position": { "x": "7", "y": "G" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "black"
   },
   {
     "id": "7F",
     "position": { "x": "7", "y": "F" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "black"
   },
   {
     "id": "7E",
     "position": { "x": "7", "y": "E" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "black"
   },
   {
     "id": "7D",
     "position": { "x": "7", "y": "D" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "black"
   },
   {
     "id": "7C",
     "position": { "x": "7", "y": "C" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "black"
   },
   {
     "id": "7B",
     "position": { "x": "7", "y": "B" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "black"
   },
   {
     "id": "7A",
     "position": { "x": "7", "y": "A" },
-    "type": "pawn"
+    "type": "pawn",
+    "color": "black"
   },
   {
     "id": "8A",
     "position": { "x": "8", "y": "A" },
-    "type": "rook"
+    "type": "rook",
+    "color": "black"
   },
   {
     "id": "8B",
     "position": { "x": "8", "y": "B" },
-    "type": "knight"
+    "type": "knight",
+    "color": "black"
   },
   {
     "id": "8C",
     "position": { "x": "8", "y": "C" },
-    "type": "bishop"
+    "type": "bishop",
+    "color": "black"
   },
   {
     "id": "8D",
     "position": { "x": "8", "y": "D" },
-    "type": "queen"
+    "type": "queen",
+    "color": "black"
   },
   {
     "id": "8E",
     "position": { "x": "8", "y": "E" },
-    "type": "king"
+    "type": "king",
+    "color": "black"
   },
   {
     "id": "8F",
     "position": { "x": "8", "y": "F" },
-    "type": "bishop"
+    "type": "bishop",
+    "color": "black"
   },
   {
     "id": "8G",
     "position": { "x": "8", "y": "G" },
-    "type": "knight"
+    "type": "knight",
+    "color": "black"
   },
   {
     "id": "8H",
     "position": { "x": "8", "y": "H" },
-    "type": "rook"
+    "type": "rook",
+    "color": "black"
   }
 ]
