@@ -414,6 +414,7 @@ const movePiece = (arrayOfChessPieces, chessPieceId, newPosition) => {
 module.exports = {
   checkIfMovementIsAllowed,
   generateBoard,
+  getAllowedMovementByPieceType,
   getBishopAllowedMovements,
   getChessPieceNameFromId,
   getKingAllowedMovement,
