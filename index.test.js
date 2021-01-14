@@ -258,6 +258,17 @@ it('should handle rook collision', () => {
       '8H'
     )
   ).toEqual(['3A', '5A', '6A', '7A', '8A', '4B', '4C', '4D', '4E', '4F', '4G', '4H']);
+  expect(
+    sdk.getRookAllowedMovements(
+      [
+        { id: '1A', position: { x: '1', y: 'A' } },
+        { id: '2A', position: { x: '2', y: 'A' } },
+        { id: '1B', position: { x: '1', y: 'B' } },
+        { id: '8A', position: { x: '8', y: 'A' } },
+      ],
+      '1A'
+    )
+  ).toEqual([]);
 });
 
 it('should handle knight default movement', () => {

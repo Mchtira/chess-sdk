@@ -147,12 +147,13 @@ const getRookAllowedMovements = (arrayOfChessPieces, chessPieceId) => {
       if (!isSameColor(collideWithPiece.id, chessPieceId)) {
         result1.push(coordinates);
       }
-    } else if (i > position.x && collideWithPiece) {
-      result1.hasCollided = true;
+    } else if (i > position.x && collideWithPiece && !result1.isPieceBlocked) {
+      result1.isPieceBlocked = true;
+
       if (!isSameColor(collideWithPiece.id, chessPieceId)) {
         result1.push(coordinates);
       }
-    } else if (!collideWithPiece && !result1.hasCollided) {
+    } else if (!collideWithPiece && !result1.isPieceBlocked) {
       result1.push(coordinates);
     }
   }
@@ -161,17 +162,17 @@ const getRookAllowedMovements = (arrayOfChessPieces, chessPieceId) => {
     const coordinates = `${position.x}${numberToLetter[i]}`;
     const collideWithPiece = getPieceByCoordinate(arrayOfChessPieces, coordinates);
 
-    if (i < position.y && collideWithPiece) {
-      result1 = [];
+    if (i < letterToNumber[position.y] && collideWithPiece) {
+      result2 = [];
       if (!isSameColor(collideWithPiece.id, chessPieceId)) {
         result2.push(coordinates);
       }
-    } else if (i > position.y && collideWithPiece) {
-      result2.hasCollided = true;
+    } else if (i > letterToNumber[position.y] && collideWithPiece && !result2.isPieceBlocked) {
+      result2.isPieceBlocked = true;
       if (!isSameColor(collideWithPiece.id, chessPieceId)) {
         result2.push(coordinates);
       }
-    } else if (!collideWithPiece && !result2.hasCollided) {
+    } else if (!collideWithPiece && !result2.isPieceBlocked) {
       result2.push(coordinates);
     }
   }
