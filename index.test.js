@@ -104,7 +104,7 @@ it('should handle bishop default movement', () => {
   ]);
 });
 
-it('should handle bishop collision', () => {
+it.only('should handle bishop collision', () => {
   expect(
     sdk.getBishopAllowedMovements(
       [
@@ -184,6 +184,19 @@ it('should handle bishop collision', () => {
       '1C'
     )
   ).toEqual(['6H', '6F', '8F', '8H']);
+
+  expect(
+    sdk.getBishopAllowedMovements(
+      [
+        { id: '1C', position: { x: '5', y: 'D' } },
+        { id: '8A', position: { x: '8', y: 'A' } },
+        { id: '7A', position: { x: '7', y: 'B' } },
+        { id: '7F', position: { x: '7', y: 'F' } },
+        { id: '8G', position: { x: '8', y: 'G' } },
+      ],
+      '1C'
+    )
+  ).toEqual(['1H', '2G', '3F', '4E', '2A', '3B', '4C', '6C', '7B', '6E', '7F']);
 });
 
 it('should handle rook default movement', () => {

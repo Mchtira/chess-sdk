@@ -73,7 +73,7 @@ const getBishopAllowedMovements = (arrayOfChessPieces, chessPieceId) => {
   for (let i = 1; i <= 8; i++) {
     const distanceFromPosition = i - pieceAbscissa;
     if (distanceFromPosition < 0) {
-      // bottom left of the bishop
+      // smaller absicca and ordinate of bishop
       const negativeDifferenceFromAbscissa = pieceOrdinate - distanceFromPosition;
       if (isBetween1and8Included(negativeDifferenceFromAbscissa)) {
         const coordinates = `${i}${numberToLetter[negativeDifferenceFromAbscissa]}`;
@@ -87,7 +87,7 @@ const getBishopAllowedMovements = (arrayOfChessPieces, chessPieceId) => {
         }
       }
 
-      // bottom right...
+      // smaller ordinate and bigger absicca of bishop
       const positiveDifferenceFromAbscissa = pieceOrdinate + distanceFromPosition;
       if (isBetween1and8Included(positiveDifferenceFromAbscissa)) {
         const coordinates = `${i}${numberToLetter[positiveDifferenceFromAbscissa]}`;
@@ -101,29 +101,38 @@ const getBishopAllowedMovements = (arrayOfChessPieces, chessPieceId) => {
         }
       }
     } else if (distanceFromPosition > 0) {
-      // top left...
+      // bigger ordinate and smaller absicca of bishop
       const negativeDifferenceFromAbscissa = pieceOrdinate - distanceFromPosition;
       if (isBetween1and8Included(negativeDifferenceFromAbscissa)) {
         const coordinates = `${i}${numberToLetter[negativeDifferenceFromAbscissa]}`;
         const collideWithPiece = getPieceByCoordinate(arrayOfChessPieces, coordinates);
+
         if (collideWithPiece) {
+          if (!isSameColor(collideWithPiece.id, chessPieceId) && !result3.hasCollided) {
+            result3.push(coordinates);
+          }
           result3.hasCollided = true;
         }
 
-        if (!result3.hasCollided || (collideWithPiece && !isSameColor(collideWithPiece.id, chessPieceId))) {
+        if (!result3.hasCollided) {
           result3.push(coordinates);
         }
       }
-      // top right...
+
+      // bigger absicca and ordinate of bishop
       const positiveDifferenceFromAbscissa = pieceOrdinate + distanceFromPosition;
       if (isBetween1and8Included(positiveDifferenceFromAbscissa)) {
         const coordinates = `${i}${numberToLetter[positiveDifferenceFromAbscissa]}`;
         const collideWithPiece = getPieceByCoordinate(arrayOfChessPieces, coordinates);
+
         if (collideWithPiece) {
+          if (!isSameColor(collideWithPiece.id, chessPieceId) && !result4.hasCollided) {
+            result4.push(coordinates);
+          }
           result4.hasCollided = true;
         }
 
-        if (!result4.hasCollided || (collideWithPiece && !isSameColor(collideWithPiece.id, chessPieceId))) {
+        if (!result4.hasCollided) {
           result4.push(coordinates);
         }
       }
@@ -380,14 +389,14 @@ const checkIfMovementIsAllowed = (arrayOfChessPieces, newPosition, chessPieceId)
   const chessPiece = getPieceById(arrayOfChessPieces, chessPieceId);
 
   if (!chessPiece) {
-    console.log(`no piece currently on the board with id ${chessPieceId}`);
+    console.warn(`no piece currently on the board with id ${chessPieceId}`);
     return;
   }
 
   const getAllowedMovementFunction = getAllowedMovementByPieceType[chessPiece.type];
 
   if (!getAllowedMovementFunction) {
-    console.log(`error with piece ${chessPieceId}, no function related to type ${chessPiece.type}`);
+    console.warn(`error with piece ${chessPieceId}, no function related to type ${chessPiece.type}`);
     return false;
   }
 
@@ -396,7 +405,7 @@ const checkIfMovementIsAllowed = (arrayOfChessPieces, newPosition, chessPieceId)
 
 const movePiece = (arrayOfChessPieces, chessPieceId, newPosition) => {
   if (!checkIfMovementIsAllowed(arrayOfChessPieces, newPosition, chessPieceId)) {
-    console.log('movement not allowed');
+    console.warn('movement not allowed');
     return arrayOfChessPieces;
   }
 
