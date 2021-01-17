@@ -48,6 +48,19 @@ const getColor = (id) => {
   console.error(`ID error in getColor function with params ${id}`);
 };
 
+const getOppositeColor = (color) => {
+  if (color === 'white') {
+    return 'black';
+  }
+
+  if (color === 'black') {
+    return 'white';
+  }
+
+  console.warn('Unknow color sent to getOppositeColor');
+  return '';
+};
+
 const isSameColor = (id1, id2) => {
   const id1Color = getColor(id1);
   const id2Color = getColor(id2);
@@ -429,6 +442,7 @@ module.exports = {
   getChessPieceNameFromId,
   getKingAllowedMovement,
   getKnightAllowedMovements,
+  getOppositeColor,
   getPawnAllowedMovement,
   getPieceById,
   getQueenAllowedMovement,
