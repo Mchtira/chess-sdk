@@ -416,9 +416,9 @@ const checkIfMovementIsAllowed = (arrayOfChessPieces, newPosition, chessPieceId)
   return getAllowedMovementFunction(arrayOfChessPieces, chessPieceId).includes(newPosition);
 };
 
-const ALLOWED_PROMOTION = ['rook', 'knight', 'bishop', 'queen'];
+const ALLOWED_PROMOTIONS = ['rook', 'knight', 'bishop', 'queen'];
 const isPromotionAllowed = (chessPiece, shouldPromoteTo, newPosition) => {
-  if (!shouldPromoteTo || chessPiece.type !== 'pawn' || !ALLOWED_PROMOTION.includes(shouldPromoteTo)) {
+  if (!shouldPromoteTo || chessPiece.type !== 'pawn' || !ALLOWED_PROMOTIONS.includes(shouldPromoteTo)) {
     return false;
   }
 
@@ -471,5 +471,5 @@ module.exports = {
   movePiece,
   newGameBoardInfos,
   numberToLetter,
-  ALLOWED_PROMOTION,
+  ALLOWED_PROMOTIONS,
 };
