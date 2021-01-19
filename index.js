@@ -416,21 +416,40 @@ const checkIfMovementIsAllowed = (arrayOfChessPieces, newPosition, chessPieceId)
   return getAllowedMovementFunction(arrayOfChessPieces, chessPieceId).includes(newPosition);
 };
 
-const movePiece = (arrayOfChessPieces, chessPieceId, newPosition) => {
+const ALLOWED_PROMOTION = ['rook', 'knight', 'bishop', 'queen'];
+const isPromotionAllowed = (chessPiece, shouldPromoteTo, newPosition) => {
+  if (!shouldPromoteTo || chessPiece.type !== 'pawn' || !ALLOWED_PROMOTION.includes(shouldPromoteTo)) {
+    return false;
+  }
+
+  if ((chessPiece.color === 'white' && newPosition[0] === '8') || (chessPiece.color === 'black' && newPosition[0] === '1')) {
+    return true;
+  }
+
+  return false;
+};
+
+const movePiece = (arrayOfChessPieces, chessPieceId, newPosition, shouldPromoteTo) => {
   if (!checkIfMovementIsAllowed(arrayOfChessPieces, newPosition, chessPieceId)) {
     console.warn('movement not allowed');
     return arrayOfChessPieces;
   }
 
   return arrayOfChessPieces
-    .filter((pieceInfo) => `${pieceInfo.position.x}${pieceInfo.position.y}` !== newPosition)
-    .map((pieceInfo) => {
-      if (chessPieceId !== pieceInfo.id) return pieceInfo;
+    .filter((chessPiece) => `${chessPiece.position.x}${chessPiece.position.y}` !== newPosition)
+    .map((chessPiece) => {
+      if (chessPieceId !== chessPiece.id) {
+        return chessPiece;
+      }
 
-      pieceInfo.position.x = newPosition[0];
-      pieceInfo.position.y = newPosition[1];
+      chessPiece.position.x = newPosition[0];
+      chessPiece.position.y = newPosition[1];
 
-      return pieceInfo;
+      if (isPromotionAllowed(chessPiece, shouldPromoteTo, newPosition)) {
+        chessPiece.type = shouldPromoteTo;
+      }
+
+      return chessPiece;
     });
 };
 
@@ -447,6 +466,7 @@ module.exports = {
   getPieceById,
   getQueenAllowedMovement,
   getRookAllowedMovements,
+  isPromotionAllowed,
   letterToNumber,
   movePiece,
   newGameBoardInfos,

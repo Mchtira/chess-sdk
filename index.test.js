@@ -104,7 +104,7 @@ it('should handle bishop default movement', () => {
   ]);
 });
 
-it.only('should handle bishop collision', () => {
+it('should handle bishop collision', () => {
   expect(
     sdk.getBishopAllowedMovements(
       [
@@ -632,4 +632,31 @@ it('should update the gameboard if movement is allowed', () => {
       '3B'
     )
   ).toEqual([{ id: '2C', position: { x: '3', y: 'B' }, type: 'pawn' }]);
+
+  expect(
+    sdk.movePiece(
+      [
+        {
+          id: '2C',
+          position: { x: '7', y: 'C' },
+          type: 'pawn',
+          color: 'white',
+        },
+      ],
+      '2C',
+      '8C',
+      'queen'
+    )
+  ).toEqual([{ color: 'white', id: '2C', position: { x: '8', y: 'C' }, type: 'queen' }]);
+});
+
+it('should detect promotion', () => {
+  expect(sdk.isPromotionAllowed({ type: 'queen', color: 'white' }, 'queen', '8H')).toBe(false);
+  expect(sdk.isPromotionAllowed({ type: 'pawn', color: 'white' }, 'king', '8H')).toBe(false);
+  expect(sdk.isPromotionAllowed({ type: 'pawn', color: 'white' }, 'knight', '1H')).toBe(false);
+  expect(sdk.isPromotionAllowed({ type: 'pawn', color: 'white' }, 'knight', '8H')).toBe(true);
+  expect(sdk.isPromotionAllowed({ type: 'queen', color: 'black' }, 'queen', '1H')).toBe(false);
+  expect(sdk.isPromotionAllowed({ type: 'pawn', color: 'black' }, 'king', '1H')).toBe(false);
+  expect(sdk.isPromotionAllowed({ type: 'pawn', color: 'black' }, 'knight', '8H')).toBe(false);
+  expect(sdk.isPromotionAllowed({ type: 'pawn', color: 'black' }, 'knight', '1H')).toBe(true);
 });
