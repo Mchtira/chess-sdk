@@ -471,4 +471,5 @@ module.exports = {
   movePiece,
   newGameBoardInfos,
   numberToLetter,
+  ALLOWED_PROMOTION,
 };
